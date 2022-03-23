@@ -42,13 +42,10 @@ for f in *.pdf; do
     print $f
     size=`pdfinfo $f | grep size`
     infos=("${(s. .)size}")
-    print $infos
     w=$infos[3]
     h=$infos[5]
     w_=`margin $max[1] $w`
     h_=`margin $max[2] $h`
-    print $w $h
-    print $w_ $h_
 
     cpdf -mediabox "${w_}pt ${h_}pt $max[1] $max[2]" $f -o ${f%.pdf}.page
 done

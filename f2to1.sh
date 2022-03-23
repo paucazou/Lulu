@@ -37,7 +37,7 @@ for f in *.pdf; do
     # dimensions
     infos=`pdfinfo $f | grep "Page size"`
     infos=("${(s. .)infos}")
-    height=$infos[4]
+    height=$infos[5]
     width=$infos[3]
     # check dimensions TODO
     # first page

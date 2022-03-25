@@ -48,6 +48,7 @@ for f in *.pdf; do
     h_=`margin $max[2] $h`
 
     cpdf -mediabox "${w_}pt ${h_}pt $max[1] $max[2]" $f -o ${f%.pdf}.page
+    #pdfcrop --margins "${w_} ${h_}" $f  ${f%.pdf}.page
 done
 
 # merging files
